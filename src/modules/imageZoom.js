@@ -1,5 +1,5 @@
 const imageZoom = () => {
-    const style = '.modal-img { z-index: 99; position: fixed; top: 2%; left: 33%; background: url(../images/documents/original/document4.jpg) center / cover; width: 654px; height: 900px; transition: 200ms;}'
+    const style = '.modal-img { z-index: 99; position: fixed; top: 2%; left: 33%; background: url(./images/documents/original/document4.jpg) center / cover; width: 654px; height: 900px; transition: 200ms;}'
     const styleCreate = document.createElement('style')
     styleCreate.innerText = style
     document.head.appendChild(styleCreate)
@@ -9,8 +9,7 @@ const imageZoom = () => {
     
     const imgs = document.querySelectorAll('.sertificate-document');
     const disableImgAttributes = document.querySelectorAll('.sertificate-document')
-    
-    const hoverEffectImgs = document.querySelectorAll('.img-responsive')
+    const hoverEffectImgs = document.querySelectorAll('.sertificate-document')
     
     hoverEffectImgs.forEach(hoverEffectImg => {
         hoverEffectImg.addEventListener('mouseover', () => {
@@ -19,12 +18,13 @@ const imageZoom = () => {
         })
         hoverEffectImg.addEventListener('mouseout', () => {
             hoverEffectImg.style.transition = '0.2'
-            hoverEffectImg.style.opacity = "0"
+            hoverEffectImg.style.opacity = "1"
         })
     })
     
     disableImgAttributes.forEach(disableImgAttributes => {
         disableImgAttributes.setAttribute('href', '')
+        disableImgAttributes.style.cursor = 'help'
     })
     
     const addModalDocument = () => {

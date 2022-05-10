@@ -1,29 +1,27 @@
-import modal from './modules/modal'
-import three from './modules/threeslider'
-import swipeUp from './modules/swipeUp'
-import twoSloder from './modules/twoSlider'
-import calc from './modules/calc'
-// import validateCalc from './modules/validateCalc'
-import timer from  './modules/timer'
-import sendForm from './modules/form'
+import calculatorCounter from './modules/calculatorCounter'
+import formSender from './modules/formSender'
 import imageZoom from './modules/imageZoom'
+import modal from './modules/modal'
+import sliders from './modules/sliders'
+import timer from './modules/timer'
+import toTop from './modules/toTop'
+import menu from './modules/menu'
 
+
+sliders()
 modal()
-three()
-swipeUp()
-twoSloder()
-calc()
-// validateCalc()
-timer('1 may 2022')
+toTop()
+timer('8 may 2022')
+calculatorCounter()
 imageZoom()
-
+menu()
 const forms = document.querySelectorAll('form')
 forms.forEach((form, index) => {
     form.addEventListener('submit', (e) => {
         e.preventDefault()
         form.id = `form${index}`
         
-        sendForm({
+        formSender({
             formId: `form${index}`,
             someElem: [
                 {
